@@ -9,6 +9,7 @@ package net.wurstclient.events;
 
 import java.util.ArrayList;
 
+import org.lwjgl.glfw.GLFWVulkan;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.util.math.MatrixStack;
