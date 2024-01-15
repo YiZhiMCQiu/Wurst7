@@ -6,6 +6,7 @@ import net.vulkanmod.vulkan.Renderer;
 import net.vulkanmod.vulkan.VRenderSystem;
 import net.vulkanmod.vulkan.Vulkan;
 import net.vulkanmod.vulkan.framebuffer.SwapChain;
+import net.wurstclient.WurstClient;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.vulkan.VkCommandBuffer;
 import org.lwjgl.vulkan.VkRect2D;
@@ -19,7 +20,7 @@ public class LegacyMainPass implements MainPass {
     private RenderTarget mainTarget;
 
     LegacyMainPass() {
-        this.mainTarget = Minecraft.getInstance().getMainRenderTarget();
+        this.mainTarget = Minecraft.getMainRenderTarget();
     }
 
     @Override
