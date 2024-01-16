@@ -154,7 +154,7 @@ public class WurstOptionsScreen extends Screen
 	public void render(DrawContext context, int mouseX, int mouseY,
 		float partialTicks)
 	{
-		renderBackground(context, mouseX, mouseY, partialTicks);
+		renderBackground(context);
 		renderTitles(context);
 		
 		for(Drawable drawable : drawables)

@@ -7,13 +7,13 @@
  */
 package net.wurstclient.mixinterface;
 
-import net.minecraft.client.session.Session;
+import net.minecraft.client.util.Session;
+import net.minecraft.util.thread.ReentrantThreadExecutor;
 
-public interface IMinecraftClient
-{
+public interface IMinecraftClient {
 	public IClientPlayerInteractionManager getInteractionManager();
-	
+
 	public IClientPlayerEntity getPlayer();
-	
+
 	public void setSession(Session session);
 }

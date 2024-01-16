@@ -12,12 +12,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientCommonNetworkHandler;
-import net.minecraft.client.network.ClientConnectionState;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.toast.SystemToast;
-import net.minecraft.network.ClientConnection;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.listener.TickablePacketListener;
 import net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket;
@@ -31,16 +27,8 @@ import net.wurstclient.util.ChatUtils;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class ClientPlayNetworkHandlerMixin
-	extends ClientCommonNetworkHandler
-	implements TickablePacketListener, ClientPlayPacketListener
-{
-	private ClientPlayNetworkHandlerMixin(WurstClient wurst,
-		MinecraftClient client, ClientConnection connection,
-		ClientConnectionState connectionState)
-	{
-		super(client, connection, connectionState);
-	}
-	
+	implements TickablePacketListener, ClientPlayPacketListener {
+
 	@Inject(at = @At("TAIL"),
 		method = "onServerMetadata(Lnet/minecraft/network/packet/s2c/play/ServerMetadataS2CPacket;)V")
 	public void onOnServerMetadata(ServerMetadataS2CPacket packet,
@@ -52,7 +40,7 @@ public abstract class ClientPlayNetworkHandlerMixin
 		// Remove Mojang's dishonest warning toast on safe servers
 		if(!packet.isSecureChatEnforced())
 		{
-			client.getToastManager().toastQueue.removeIf(toast -> toast
+			WurstClient.MC.getToastManager().toastQueue.removeIf(toast -> toast
 				.getType() == SystemToast.Type.UNSECURE_SERVER_WARNING);
 			return;
 		}
@@ -63,9 +51,9 @@ public abstract class ClientPlayNetworkHandlerMixin
 		MutableText message = Text
 			.translatable("toast.wurst.nochatreports.unsafe_server.message");
 		
-		SystemToast systemToast = SystemToast.create(client,
+		SystemToast systemToast = SystemToast.create(WurstClient.MC,
 			SystemToast.Type.UNSECURE_SERVER_WARNING, title, message);
-		client.getToastManager().add(systemToast);
+		WurstClient.MC.getToastManager().add(systemToast);
 	}
 	
 	@Inject(at = @At("TAIL"),

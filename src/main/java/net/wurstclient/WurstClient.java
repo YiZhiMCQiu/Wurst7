@@ -21,8 +21,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.util.InputUtil;
-import net.wurstclient.altmanager.AltManager;
-import net.wurstclient.altmanager.Encryption;
 import net.wurstclient.analytics.WurstAnalytics;
 import net.wurstclient.clickgui.ClickGui;
 import net.wurstclient.command.CmdList;
@@ -58,11 +56,10 @@ public enum WurstClient
 	public static IMinecraftClient IMC;
 	
 	public static final String VERSION = "7.40";
-	public static final String MC_VERSION = "1.20.4";
+	public static final String MC_VERSION = "1.20.1";
 	
 	private WurstAnalytics analytics;
 	private EventManager eventManager;
-	private AltManager altManager;
 	private HackList hax;
 	private CmdList cmds;
 	private OtfList otfs;
@@ -144,10 +141,6 @@ public enum WurstClient
 		
 		problematicPackDetector = new ProblematicResourcePackDetector();
 		problematicPackDetector.start();
-		
-		Path altsFile = wurstFolder.resolve("alts.encrypted_json");
-		Path encFolder = Encryption.chooseEncryptionFolder();
-		altManager = new AltManager(altsFile, encFolder);
 		
 		zoomKey = new KeyBinding("key.wurst.zoom", InputUtil.Type.KEYSYM,
 			GLFW.GLFW_KEY_V, KeyBinding.MISC_CATEGORY);
@@ -336,10 +329,5 @@ public enum WurstClient
 	public KeyBinding getZoomKey()
 	{
 		return zoomKey;
-	}
-	
-	public AltManager getAltManager()
-	{
-		return altManager;
 	}
 }

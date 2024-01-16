@@ -19,7 +19,6 @@ import net.minecraft.client.realms.gui.screen.DisconnectedRealmsScreen;
 import net.minecraft.client.realms.gui.screen.RealmsScreen;
 import net.minecraft.text.Text;
 import net.wurstclient.WurstClient;
-import net.wurstclient.nochatreports.ForcedChatReportsScreen;
 
 @Mixin(DisconnectedRealmsScreen.class)
 public class DisconnectedRealmsScreenMixin extends RealmsScreen
@@ -43,8 +42,5 @@ public class DisconnectedRealmsScreenMixin extends RealmsScreen
 			return;
 		
 		System.out.println("Realms disconnected: " + reason);
-		
-		if(ForcedChatReportsScreen.isCausedByNoChatReports(reason))
-			client.setScreen(new ForcedChatReportsScreen(parent));
 	}
 }

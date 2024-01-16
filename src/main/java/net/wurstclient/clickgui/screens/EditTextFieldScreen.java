@@ -85,7 +85,7 @@ public final class EditTextFieldScreen extends Screen
 	public void render(DrawContext context, int mouseX, int mouseY,
 		float partialTicks)
 	{
-		renderBackground(context, mouseX, mouseY, partialTicks);
+		renderBackground(context);
 		context.drawCenteredTextWithShadow(client.textRenderer,
 			setting.getName(), width / 2, 20, 0xFFFFFF);
 		

@@ -7,7 +7,7 @@
  */
 package net.wurstclient.other_features;
 
-import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
+import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
 import net.minecraft.util.Identifier;
 import net.wurstclient.DontBlock;
 import net.wurstclient.SearchTags;
@@ -42,7 +42,7 @@ public final class VanillaSpoofOtf extends OtherFeature
 		if(!(event.getPacket() instanceof CustomPayloadC2SPacket packet))
 			return;
 		
-		Identifier channel = packet.payload().id();
+		Identifier channel = packet.getChannel();
 		
 		if(channel.getNamespace().equals("minecraft")
 			&& channel.getPath().equals("register"))

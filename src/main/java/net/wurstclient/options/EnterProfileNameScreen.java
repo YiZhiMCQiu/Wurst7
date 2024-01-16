@@ -86,7 +86,7 @@ public final class EnterProfileNameScreen extends Screen
 	public void render(DrawContext context, int mouseX, int mouseY,
 		float partialTicks)
 	{
-		renderBackground(context, mouseX, mouseY, partialTicks);
+		renderBackground(context);
 		context.drawCenteredTextWithShadow(client.textRenderer,
 			"Name your new profile", width / 2, 20, 0xFFFFFF);
 		

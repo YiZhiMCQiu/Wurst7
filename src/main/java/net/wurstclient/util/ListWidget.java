@@ -323,16 +323,7 @@ public abstract class ListWidget extends AbstractParentElement
 		
 		return true;
 	}
-	
-	@Override
-	public boolean mouseScrolled(double mouseX, double mouseY,
-		double horizontalAmount, double verticalAmount)
-	{
-		if(!isVisible())
-			return false;
-		scrollAmount -= verticalAmount * itemHeight / 2.0D;
-		return true;
-	}
+
 	
 	@Override
 	public boolean keyPressed(int keyCode, int scanCode, int modifiers)

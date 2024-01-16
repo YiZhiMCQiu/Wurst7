@@ -37,9 +37,6 @@ public class IngameHudMixin
 		method = "render(Lnet/minecraft/client/gui/DrawContext;F)V")
 	private void onRender(DrawContext context, float tickDelta, CallbackInfo ci)
 	{
-		if(debugHud.shouldShowDebugHud())
-			return;
-		
 		EventManager.fire(new GUIRenderEvent(context, tickDelta));
 	}
 	

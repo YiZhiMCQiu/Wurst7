@@ -21,8 +21,6 @@ import net.minecraft.client.network.ServerInfo;
 import net.minecraft.text.Text;
 import net.wurstclient.WurstClient;
 import net.wurstclient.mixinterface.IMultiplayerScreen;
-import net.wurstclient.serverfinder.CleanUpScreen;
-import net.wurstclient.serverfinder.ServerFinderScreen;
 import net.wurstclient.util.LastServerRememberer;
 
 @Mixin(MultiplayerScreen.class)
@@ -49,19 +47,6 @@ public class MultiplayerScreenMixin extends Screen implements IMultiplayerScreen
 				b -> LastServerRememberer
 					.joinLastServer((MultiplayerScreen)(Object)this))
 			.dimensions(width / 2 - 154, 10, 100, 20).build());
-		
-		addDrawableChild(
-			ButtonWidget
-				.builder(Text.literal("Server Finder"),
-					b -> client.setScreen(new ServerFinderScreen(
-						(MultiplayerScreen)(Object)this)))
-				.dimensions(width / 2 + 154 + 4, height - 54, 100, 20).build());
-		
-		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Clean Up"),
-				b -> client.setScreen(
-					new CleanUpScreen((MultiplayerScreen)(Object)this)))
-			.dimensions(width / 2 + 154 + 4, height - 30, 100, 20).build());
 	}
 	
 	@Inject(at = @At("TAIL"), method = "tick()V")

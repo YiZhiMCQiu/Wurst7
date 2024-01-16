@@ -61,7 +61,7 @@ public class FakePlayerEntity extends OtherClientPlayerEntity
 	
 	private void spawn()
 	{
-		world.addEntity(this);
+		world.addEntity(0,this);
 	}
 	
 	public void despawn()

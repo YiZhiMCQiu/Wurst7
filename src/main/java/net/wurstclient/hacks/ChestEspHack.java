@@ -189,8 +189,6 @@ public class ChestEspHack extends Hack implements UpdateListener,
 				droppers.add(blockEntity);
 			else if(blockEntity instanceof DispenserBlockEntity)
 				dispensers.add(blockEntity);
-			else if(blockEntity instanceof CrafterBlockEntity)
-				crafters.add(blockEntity);
 			else if(blockEntity instanceof AbstractFurnaceBlockEntity)
 				furnaces.add(blockEntity);
 			

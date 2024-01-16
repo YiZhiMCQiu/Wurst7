@@ -44,12 +44,10 @@ public final class ClickGuiScreen extends Screen
 	}
 	
 	@Override
-	public boolean mouseScrolled(double mouseX, double mouseY,
-		double horizontalAmount, double verticalAmount)
+	public boolean mouseScrolled(double mouseX, double mouseY, double amount)
 	{
-		gui.handleMouseScroll(mouseX, mouseY, verticalAmount);
-		return super.mouseScrolled(mouseX, mouseY, horizontalAmount,
-			verticalAmount);
+		gui.handleMouseScroll(mouseX, mouseY, amount);
+		return super.mouseScrolled(mouseX, mouseY, 1);
 	}
 	
 	@Override

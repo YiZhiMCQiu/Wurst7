@@ -55,7 +55,7 @@ public enum ChunkUtils
 		if(packet instanceof ChunkDeltaUpdateS2CPacket p)
 			return p.sectionPos.toChunkPos();
 		if(packet instanceof ChunkDataS2CPacket p)
-			return new ChunkPos(p.getChunkX(), p.getChunkZ());
+			return new ChunkPos(p.getX(), p.getZ());
 		
 		return null;
 	}
@@ -94,15 +94,7 @@ public enum ChunkUtils
 		return stream;
 	}
 	
-	/**
-	 * Returns the y-coordinate of the highest non-empty section in the chunk.
-	 *
-	 * <p>
-	 * This is a re-implementation of
-	 * {@link Chunk#getHighestNonEmptySectionYOffset()}, which has been
-	 * deprecated and marked for removal in 23w17a with no apparent replacement
-	 * provided by Mojang.
-	 */
+
 	public static int getHighestNonEmptySectionYOffset(Chunk chunk)
 	{
 		int i = chunk.getHighestNonEmptySection();

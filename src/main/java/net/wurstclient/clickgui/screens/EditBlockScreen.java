@@ -98,7 +98,7 @@ public final class EditBlockScreen extends Screen
 		MatrixStack matrixStack = context.getMatrices();
 		TextRenderer tr = client.textRenderer;
 		
-		renderBackground(context, mouseX, mouseY, partialTicks);
+		renderBackground(context);
 		context.drawCenteredTextWithShadow(tr, setting.getName(), width / 2, 20,
 			0xFFFFFF);
 		
