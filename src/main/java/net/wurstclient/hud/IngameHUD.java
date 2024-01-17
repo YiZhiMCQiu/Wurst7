@@ -37,7 +37,6 @@ public final class IngameHUD implements GUIRenderListener
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		
 		clickGui.updateColors();
-
 		hackList.render(context, partialTicks);
 		tabGui.render(context, partialTicks);
 		
