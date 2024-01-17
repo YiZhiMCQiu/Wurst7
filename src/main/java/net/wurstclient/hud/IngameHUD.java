@@ -19,7 +19,6 @@ import net.wurstclient.events.GUIRenderListener;
 
 public final class IngameHUD implements GUIRenderListener
 {
-	private final WurstLogo wurstLogo = new WurstLogo();
 	private final HackListHUD hackList = new HackListHUD();
 	private TabGui tabGui;
 	
@@ -31,16 +30,14 @@ public final class IngameHUD implements GUIRenderListener
 		
 		if(tabGui == null)
 			tabGui = new TabGui();
-		
-		boolean blend = GL11.glGetBoolean(GL11.GL_BLEND);
+
 		ClickGui clickGui = WurstClient.INSTANCE.getGui();
 		
 		// GL settings
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		
 		clickGui.updateColors();
-		
-		wurstLogo.render(context);
+
 		hackList.render(context, partialTicks);
 		tabGui.render(context, partialTicks);
 		
@@ -51,11 +48,8 @@ public final class IngameHUD implements GUIRenderListener
 		// GL resets
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		
-		if(blend)
-			GL11.glEnable(GL11.GL_BLEND);
-		else
-			GL11.glDisable(GL11.GL_BLEND);
+
+		GL11.glDisable(GL11.GL_BLEND);
 	}
 	
 	public HackListHUD getHackList()

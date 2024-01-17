@@ -60,6 +60,7 @@
     "TelemetryManagerMixin",
     "TextVisitFactoryMixin",
     "TitleScreenMixin",
+    "GL11Mixin",
     "WorldMixin",
     "WorldRendererMixin"
   ],
