@@ -9,6 +9,7 @@ package net.wurstclient.hacks.treebot;
 
 import java.util.ArrayList;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 

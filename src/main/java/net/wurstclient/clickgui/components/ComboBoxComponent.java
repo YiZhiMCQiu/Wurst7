@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 

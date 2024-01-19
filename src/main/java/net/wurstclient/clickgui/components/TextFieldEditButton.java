@@ -9,6 +9,7 @@ package net.wurstclient.clickgui.components;
 
 import java.util.Objects;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 

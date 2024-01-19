@@ -32,11 +32,8 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.options.WurstOptionsScreen;
 
 @Mixin(GameMenuScreen.class)
-public abstract class GameMenuScreenMixin extends Screen
-{
-	private static final Identifier WURST_TEXTURE =
-		new Identifier("wurst", "wurst_128.png");
-	
+public abstract class GameMenuScreenMixin extends Screen {
+	// TODO 删除了WurstLogo, 使其兼容Vulkan
 	private ButtonWidget wurstOptionsButton;
 	
 	private GameMenuScreenMixin(WurstClient wurst, Text title)
@@ -67,16 +64,6 @@ public abstract class GameMenuScreenMixin extends Screen
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		
-		int x = wurstOptionsButton.getX() + 34;
-		int y = wurstOptionsButton.getY() + 2;
-		int w = 63;
-		int h = 16;
-		int fw = 63;
-		int fh = 16;
-		float u = 0;
-		float v = 0;
-		context.drawTexture(WURST_TEXTURE, x, y, u, v, w, h, fw, fh);
 	}
 	
 	private void addWurstOptionsButton()
@@ -109,7 +96,7 @@ public abstract class GameMenuScreenMixin extends Screen
 					"Someone deleted the Feedback button!"));
 		
 		wurstOptionsButton = ButtonWidget
-			.builder(Text.literal("            Options"),
+			.builder(Text.literal("Options"),
 				b -> openWurstOptions())
 			.dimensions(width / 2 - 102, buttonY, 204, 20).build();
 		buttons.add(wurstOptionsButton);

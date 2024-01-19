@@ -24,6 +24,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.util.RegionPos;
 import net.wurstclient.util.RenderUtils;
+import net.wurstclient.vulkanfixes.var.BufferVars;
 
 public final class NewChunksReasonsRenderer
 {

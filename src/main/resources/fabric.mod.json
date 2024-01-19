@@ -3,10 +3,11 @@
   "id": "wurst",
   "version": "${version}",
 
-  "name": "Wurst Client",
+  "name": "Wurst Client VulkanFix",
   "description": "Wurst Wurst Wurst!",
   "authors": [
-    "Alexander01998"
+    "Alexander01998",
+    "YiZhiMCQiu"
   ],
   "contact": {
     "homepage": "https://www.wurstclient.net/?utm_source=Wurst+Client&utm_medium=ModMenu&utm_content=Website",

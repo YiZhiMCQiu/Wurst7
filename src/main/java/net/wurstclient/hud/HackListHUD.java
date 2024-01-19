@@ -38,13 +38,9 @@ public final class HackListHUD implements UpdateListener
 	{
 		if(otf.getMode() == Mode.HIDDEN)
 			return;
-		
-		if(otf.getPosition() == Position.LEFT
-			&& WurstClient.INSTANCE.getOtfs().wurstLogoOtf.isVisible())
-			posY = 22;
-		else
-			posY = 2;
-		
+
+		posY = 2;
+
 		// color
 		if(WurstClient.INSTANCE.getHax().rainbowUiHack.isEnabled())
 		{

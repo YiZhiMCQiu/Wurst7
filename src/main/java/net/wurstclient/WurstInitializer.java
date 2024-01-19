@@ -8,6 +8,7 @@
 package net.wurstclient;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.render.BufferBuilder;
 
 public final class WurstInitializer implements ModInitializer
 {
@@ -23,7 +24,6 @@ public final class WurstInitializer implements ModInitializer
 		if(initialized)
 			throw new RuntimeException(
 				"WurstInitializer.onInitialize() ran twice!");
-		
 		WurstClient.INSTANCE.initialize();
 		initialized = true;
 	}

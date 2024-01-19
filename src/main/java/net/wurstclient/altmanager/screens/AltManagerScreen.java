@@ -20,6 +20,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.StringJoiner;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;

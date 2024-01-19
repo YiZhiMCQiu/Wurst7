@@ -10,6 +10,7 @@ package net.wurstclient.hacks;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 
@@ -53,7 +54,7 @@ public final class ItemEspHack extends Hack implements UpdateListener,
 		"Items will be highlighted in this color.", Color.YELLOW);
 	
 	private final ArrayList<ItemEntity> items = new ArrayList<>();
-	
+
 	public ItemEspHack()
 	{
 		super("ItemESP");

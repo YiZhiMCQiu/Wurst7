@@ -7,11 +7,19 @@ import org.spongepowered.asm.mixin.Overwrite;
 @Mixin(GL11.class)
 public class Gl11Mixin {
     /**
-     * @author
-     * @reason
+     * @author YiZhiMCQiu
+     * @reason disable blend to fix not supported method.
      */
     @Overwrite(remap = false)
     public static void glBlendFunc(int sfactor, int dfactor) {
         
+    }
+    /**
+     * @author YiZhiMCQiu
+     * @reason disable depth mask to fix not supported method.
+     */
+    @Overwrite(remap = false)
+    public static void glDepthMask(boolean flag) {
+
     }
 }

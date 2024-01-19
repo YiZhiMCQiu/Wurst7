@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeMap;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;

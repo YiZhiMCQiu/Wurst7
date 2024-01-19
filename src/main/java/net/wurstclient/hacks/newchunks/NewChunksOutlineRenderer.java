@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.wurstclient.util.RegionPos;
 import net.wurstclient.util.RenderUtils;
+import net.wurstclient.vulkanfixes.var.BufferVars;
 
 public final class NewChunksOutlineRenderer implements NewChunksChunkRenderer
 {

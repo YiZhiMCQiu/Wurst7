@@ -10,6 +10,7 @@ package net.wurstclient.hacks.chestesp;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+import net.wurstclient.vulkanfixes.var.BufferVars;
 import org.joml.Matrix4f;
 
 import com.mojang.blaze3d.systems.RenderSystem;
