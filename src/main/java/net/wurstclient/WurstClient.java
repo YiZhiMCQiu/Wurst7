@@ -50,8 +50,7 @@ import net.wurstclient.update.ProblematicResourcePackDetector;
 import net.wurstclient.update.WurstUpdater;
 import net.wurstclient.util.json.JsonException;
 
-public enum WurstClient
-{
+public enum WurstClient {
 	INSTANCE;
 	
 	public static MinecraftClient MC;
@@ -66,7 +65,7 @@ public enum WurstClient
 	private HackList hax;
 	private CmdList cmds;
 	private OtfList otfs;
-	private SettingsFile settingsFile;
+	public SettingsFile settingsFile;
 	private Path settingsProfileFolder;
 	private KeybindList keybinds;
 	private ClickGui gui;
@@ -80,7 +79,7 @@ public enum WurstClient
 	private static boolean guiInitialized;
 	private WurstUpdater updater;
 	private ProblematicResourcePackDetector problematicPackDetector;
-	private Path wurstFolder;
+	public Path wurstFolder;
 	
 	private KeyBinding zoomKey;
 	

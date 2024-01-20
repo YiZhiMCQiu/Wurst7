@@ -1,4 +1,6 @@
 {
+  "description.wurst.hack.chat": "Add custom prefix and suffix in your chat.",
+  "description.wurst.hack.chatshield": "(Only in China)屏蔽一些鸟语花香的杂声",
   "description.wurst.hack.aimassist": "Helps you aim at nearby entities.",
   "description.wurst.hack.airplace": "Allows you to place blocks in mid-air.",
   "description.wurst.hack.anchoraura": "Automatically places (optional), charges, and detonates respawn anchors to kill entities around you.",
